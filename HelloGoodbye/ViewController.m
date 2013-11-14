@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setState:Hello];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +27,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)push:(id)sender {
+    switch ([self state]) {
+        case Hello:
+            [self setState:GoodBye];
+            [[self label] setText:@"Good Bye!"];
+            break;
+            
+        case GoodBye:
+            [self setState:Hello];
+            [[self label] setText:@"Hello, World"];
+            break;
+    }
+   }
 @end

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)push:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
+@property enum {Hello, GoodBye} state;
+- (IBAction)push:(id)sender;
 
 @end
